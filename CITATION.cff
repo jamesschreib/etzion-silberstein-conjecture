@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite it using the metadata below."
+title: "Lean 4 formalization of a counterexample to the Etzion--Silberstein conjecture"
+authors:
+  - family-names: "Schreib"
+    given-names: "James Alexander"
+    affiliation: "New York University"
+    email: "jas10320@nyu.edu"
+    orcid: "https://orcid.org/0009-0005-1048-0209"
+type: software
+version: "1.0.0"
+license: "Apache-2.0"
+repository-code: "https://github.com/jamesschreib/etzion-silberstein-conjecture"
+keywords:
+  - "Ferrers diagram rank-metric codes"
+  - "Etzion--Silberstein bound"
+  - "coding theory"
+  - "finite fields"
+  - "formal verification"
+  - "Lean 4"

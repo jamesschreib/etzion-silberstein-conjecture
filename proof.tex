@@ -1,0 +1,136 @@
+\documentclass[11pt,reqno]{amsart}
+
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=-1
+
+\usepackage{microtype}
+\microtypesetup{expansion=false}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdfauthor={},
+  pdftitle={},
+  pdfsubject={},
+  pdfkeywords={},
+  pdfcreator={},
+  pdfproducer={}
+}
+
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\setlength{\emergencystretch}{1em}
+
+\makeatletter
+\newcommand{\doi}[1]{%
+  \begingroup
+  \def\UrlBreaks{\do\/\do\.\do\-\do\_\do\(\do\)}%
+  \def\UrlBigBreaks{\do\/}%
+  \href{https://doi.org/#1}{\nolinkurl{#1}}%
+\endgroup}
+\makeatother
+
+\date{August 9, 2026}
+
+\begin{document}
+
+\section{Proof}
+
+Let $\mathcal D$ be the top-aligned $5$-by-$5$ Ferrers diagram with column
+heights $(c_1,\ldots,c_5)=(3,3,5,5,5)$.  Write
+$\kappa_F(\mathcal D,5)$ for the largest dimension of an $F$-linear space
+of matrices supported on $\mathcal D$ in which every nonzero matrix has
+rank $5$.  The Etzion--Silberstein bound is
+\begin{equation}
+ \nu_{\min}(\mathcal D,5)
+ =\min_{0\le j<5}\sum_{i=1}^{5-j}
+   \max\{0,c_i-4+j\}.
+ \label{eq:bound}
+\end{equation}
+
+\begin{theorem}[Etzion--Silberstein counterexample]
+For $F=\mathbb F_{169}$,
+\[
+ \kappa_F(\mathcal D,5)=2<3=\nu_{\min}(\mathcal D,5).
+\]
+Consequently, the Etzion--Silberstein bound is not universally attained.
+\end{theorem}
+
+\begin{proof}
+The five quantities minimized in \eqref{eq:bound} are
+\[
+ (3,4,5,4,3),
+\]
+so the bound is $3$.
+
+We first prove that the optimum is at most $2$.  Put $q=169$ and suppose
+that a three-dimensional code exists.  Choose a basis $M_0,M_1,M_2$, put
+$M(x)=\sum_{i=0}^2x_iM_i$, and identify $x$ with a column vector.  The
+Ferrers support gives
+\[
+ M(x)=\begin{pmatrix}P(x)&B(x)\\0&D(x)\end{pmatrix},
+ \qquad P(x)=[A_1x,A_2x],
+\]
+where $A_1,A_2\in M_3(F)$.  Each $A_i$ is invertible, since otherwise
+some nonzero $M(x)$ has a zero column.  Moreover,
+$T=A_1^{-1}A_2$ has no eigenvalue in $F$, since an eigenvector would make
+the first two columns of $M(x)$ dependent.  Thus the cubic characteristic
+polynomial of $T$ is irreducible.  Over $E=\mathbb F_{q^3}$ it has an
+eigenvector $v\ne0$, and hence
+\begin{equation}
+ \det M(v)=0.
+ \label{eq:extension-zero}
+\end{equation}
+
+Now set $f(X)=\det(\sum_{i=0}^2X_iM_i)$.  This is a homogeneous quintic
+with no nonzero zero over $F$.  It is irreducible over $F$: otherwise one
+of its homogeneous factors has degree at most $2$, and such a form in
+three variables has a nonzero zero over a finite field, by elementary
+linear algebra in degree $1$ and Chevalley--Warning in degree $2$.
+
+If $f$ were absolutely irreducible, the normalization of the plane curve
+$f=0$ would have genus at most $6$.  Hasse--Weil would give at least
+$169+1-12\cdot13=14$ rational points; their images
+would be projective $F$-zeros of $f$, a contradiction.  Hence $f$ is not
+absolutely irreducible.
+
+Since $\operatorname{char}F=13>5$, the quintic is geometrically reduced.
+Frobenius acts transitively on its absolutely irreducible factors, whose
+number times their common degree is $5$.  Irreducibility over $F$ and
+failure of absolute irreducibility therefore force five conjugate lines.
+Thus, for $L=\mathbb F_{q^5}$ and a nonzero $c\in F$,
+\begin{equation}
+ f=c\prod_{i=0}^4\ell^{(q^i)},
+ \qquad
+ \ell=a_0X_0+a_1X_1+a_2X_2,\quad a_i\in L.
+ \label{eq:norm}
+\end{equation}
+The coefficients $a_0,a_1,a_2$ are $F$-linearly independent.  Otherwise
+$\ell$, and therefore $f$, would have a nonzero $F$-zero.  Because
+$E\cap L=F$ (the extension degrees $3$ and $5$ are coprime), they remain
+independent over $E$.  The same holds for their Frobenius conjugates, so
+\eqref{eq:norm} has no nonzero zero in $E^3$.  This contradicts
+\eqref{eq:extension-zero}.  No three-dimensional code exists, and a code
+of larger dimension would contain one; hence
+$\kappa_F(\mathcal D,5)\le2$.
+
+For the reverse inequality, let $K=\mathbb F_{q^5}=F(\alpha)$ and use the
+power basis $1,\alpha,\ldots,\alpha^4$.  For $a,b\in F$, let
+$M_{a+b\alpha}$ be the matrix of multiplication by $a+b\alpha$ on $K$.
+The space
+\[
+ C_0=\{M_{a+b\alpha}:a,b\in F\}
+\]
+has dimension $2$.  Its first two columns represent
+$a+b\alpha$ and $a\alpha+b\alpha^2$, so their last two entries vanish;
+there is no restriction on the remaining columns.  Thus $C_0$ is
+supported on $\mathcal D$.  Every nonzero member is invertible because it
+is multiplication by a nonzero field element.  Therefore
+$\kappa_F(\mathcal D,5)\ge2$, completing the proof.
+\end{proof}
+
+\end{document}
