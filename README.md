@@ -12,9 +12,8 @@ $$
 
 The two-dimensional code consists of the multiplication maps by
 $a+b\alpha$ on $\mathbb F_{169^5}$ in the power basis
-$1,\alpha,\ldots,\alpha^4$. The proof that dimension $3$ is impossible is
-in [proof.pdf](proof.pdf).
+$1,\alpha,\ldots,\alpha^4$. The construction and the proof that dimension
+$3$ is impossible are in [`proof.pdf`](proof.pdf).
 
-Formalized in Lean 4.30, including the bound computation and two-dimensional
-multiplication-code construction; `quinticObstruction_external` isolates the
-geometric upper bound. Reproduce the verification by running `lake build`.
+This repository contains the proof and its LaTeX source. It does not claim a
+machine formalization of the geometric upper bound.

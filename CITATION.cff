@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this formalization, please cite it using the metadata below."
-title: "Lean 4 formalization of a counterexample to the Etzion--Silberstein conjecture"
+message: "If you use this proof, please cite it using the metadata below."
+title: "A counterexample to the Etzion--Silberstein conjecture"
 authors:
   - family-names: "Schreib"
     given-names: "James Alexander"
@@ -16,5 +16,4 @@ keywords:
   - "Etzion--Silberstein bound"
   - "coding theory"
   - "finite fields"
-  - "formal verification"
-  - "Lean 4"
+  - "counterexample"
