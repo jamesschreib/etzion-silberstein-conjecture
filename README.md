@@ -12,8 +12,6 @@ $$
 
 The two-dimensional code consists of the multiplication maps by
 $a+b\alpha$ on $\mathbb F_{169^5}$ in the power basis
-$1,\alpha,\ldots,\alpha^4$. The construction and the proof that dimension
-$3$ is impossible are in [`proof.pdf`](proof.pdf).
+$1,\alpha,\ldots,\alpha^4$.
 
-This repository contains the proof and its LaTeX source. It does not claim a
-machine formalization of the geometric upper bound.
+The proof is in [`proof.pdf`](proof.pdf).
