@@ -15,3 +15,22 @@ $a+b\alpha$ on $\mathbb F_{169^5}$ in the power basis
 $1,\alpha,\ldots,\alpha^4$.
 
 The proof is in [`proof.pdf`](proof.pdf).
+Formalized in Lean 4.30 using Hasse--Weil and Frobenius-factorization axioms.
+
+## Lean formalization
+
+Under exactly the two arithmetic-geometry axioms stated below, the Lean 4
+formalization checks the numerical bound, the two-dimensional
+multiplication code, the cubic-extension eigenvector argument, the reduction
+from a hypothetical three-dimensional code to a determinant-quintic zero, and
+the final strict gap.
+
+It deliberately assumes only two polynomial-level arithmetic-geometry
+bridges: the required Hasse--Weil consequence for absolutely irreducible plane
+quintics, and the Frobenius-factorization consequence for anisotropic
+non-absolutely-irreducible quintics. Neither axiom mentions Ferrers diagrams,
+codes, dimensions, or the desired upper bound.
+
+See [FORMALIZATION.md](FORMALIZATION.md) for the exact trust boundary and
+module-by-module proof map. With Lean 4.30.0 and the pinned Mathlib checkout,
+run `lake build`. `AxiomAudit.lean` prints the assumptions of every major theorem.
