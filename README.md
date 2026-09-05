@@ -34,3 +34,5 @@ codes, dimensions, or the desired upper bound.
 See [FORMALIZATION.md](FORMALIZATION.md) for the exact trust boundary and
 module-by-module proof map. With Lean 4.30.0 and the pinned Mathlib checkout,
 run `lake build`. `AxiomAudit.lean` prints the assumptions of every major theorem.
+
+Posed by Etzion and Silberstein in 2009, 17 years ago.
