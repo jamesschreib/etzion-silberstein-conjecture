@@ -1,5 +1,7 @@
 # Counterexample to the Etzion--Silberstein Conjecture
 
+The counterexample is fully and sufficiently formalized in Lean, conditional on two explicit arithmetic-geometry axioms.
+
 The Etzion--Silberstein conjecture states that its dimension bound for
 Ferrers-diagram rank-metric codes is attained over every finite field.
 
