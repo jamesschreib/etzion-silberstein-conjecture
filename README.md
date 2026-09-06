@@ -1,40 +1,12 @@
-# Counterexample to the Etzion--Silberstein Conjecture
+# The Etzion-Silberstein conjecture
 
-The counterexample is fully and sufficiently formalized in Lean, conditional on two explicit arithmetic-geometry axioms.
+The conjecture states that its dimension bound for Ferrers-diagram rank-metric codes is attained over every finite field.
 
-The Etzion--Silberstein conjecture states that its dimension bound for
-Ferrers-diagram rank-metric codes is attained over every finite field.
+For the diagram with column heights $(3,3,5,5,5)$ over $\mathbb F_{169}$ at minimum rank distance $5$, the maximum code dimension is $2$, below the conjectured bound of $3$.
 
-It fails over $F=\mathbb F_{169}$ at minimum rank distance $5$ for the
-Ferrers diagram $\mathcal D$ with column heights $(3,3,5,5,5)$:
+Proof: [proof.pdf](proof.pdf).
 
-$$
-\kappa_F(\mathcal D,5)=2<3=\nu_{\min}(\mathcal D,5).
-$$
+The counterexample is fully formalized in Lean, conditional on `hasseWeil_nonzero_zero` and `anisotropic_not_absolutely_irreducible_no_cubic_zero`.
+Run `lake build` to verify; see [FORMALIZATION.md](FORMALIZATION.md) for details.
 
-The two-dimensional code consists of the multiplication maps by
-$a+b\alpha$ on $\mathbb F_{169^5}$ in the power basis
-$1,\alpha,\ldots,\alpha^4$.
-
-The proof is in [`proof.pdf`](proof.pdf).
-Formalized in Lean 4.30 using Hasse--Weil and Frobenius-factorization axioms.
-
-## Lean formalization
-
-Under exactly the two arithmetic-geometry axioms stated below, the Lean 4
-formalization checks the numerical bound, the two-dimensional
-multiplication code, the cubic-extension eigenvector argument, the reduction
-from a hypothetical three-dimensional code to a determinant-quintic zero, and
-the final strict gap.
-
-It deliberately assumes only two polynomial-level arithmetic-geometry
-bridges: the required Hasse--Weil consequence for absolutely irreducible plane
-quintics, and the Frobenius-factorization consequence for anisotropic
-non-absolutely-irreducible quintics. Neither axiom mentions Ferrers diagrams,
-codes, dimensions, or the desired upper bound.
-
-See [FORMALIZATION.md](FORMALIZATION.md) for the exact trust boundary and
-module-by-module proof map. With Lean 4.30.0 and the pinned Mathlib checkout,
-run `lake build`. `AxiomAudit.lean` prints the assumptions of every major theorem.
-
-Posed by Etzion and Silberstein in 2009, 17 years ago.
+Posed by Etzion and Silberstein in 2009.
