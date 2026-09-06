@@ -10,5 +10,8 @@ rev = "v4.30.0"
 [[lean_lib]]
 name = "EtzionSilbersteinCounterexample"
 
+moreLeanArgs = ["-DwarningAsError=true"]
+
 [[lean_lib]]
 name = "AxiomAudit"
+moreLeanArgs = ["-DwarningAsError=true"]

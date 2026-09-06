@@ -25,4 +25,12 @@ open EtzionSilbersteinCounterexample
 #print axioms code_finrank_le_two
 #print axioms optimalDimension_F169
 #print axioms counterexample_to_universal_attainment
+/--
+info: 'EtzionSilbersteinCounterexample.counterexample_summary' depends on axioms: [propext,
+ Classical.choice,
+ anisotropic_not_absolutely_irreducible_no_cubic_zero,
+ hasseWeil_nonzero_zero,
+ Quot.sound]
+-/
+#guard_msgs in
 #print axioms counterexample_summary
