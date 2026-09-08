@@ -9,4 +9,4 @@ Proof: [proof.pdf](proof.pdf).
 The counterexample is fully formalized in Lean, conditional on `hasseWeil_nonzero_zero` and `anisotropic_not_absolutely_irreducible_no_cubic_zero`.
 Run `lake build` to verify; see [FORMALIZATION.md](FORMALIZATION.md) for details.
 
-Posed by Etzion and Silberstein in 2009.
+Posed by Etzion and Silberstein in 2009. Disproven Aug 9, 2026.
